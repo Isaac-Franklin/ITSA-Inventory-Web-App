@@ -1,0 +1,36 @@
+<!-- @format -->
+
+{% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'useronboard/signup/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Signup | ITSA Inventory System</title>
+	</head>
+	<body>
+		<main>
+            <div class="mainsection">
+                <div class="loginmainimg">
+					<img src='{% static 'useronboard/login/images/Readinglist.gif' %}' />
+				</div>
+                <div>
+                    <div class="logoandwelcome">
+                        <img src={% static 'useronboard/login/images/itsalogo.PNG' %} />
+                        <h3>
+                            Welcome To ITSA Inventory System
+                        </h3>
+                    </div>
+                    <p  class="quote">
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                    </p>
+                    <a href={% url 'ContinueUserSignup' %}><button>Continue Signup</button></a>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+{% endblock content %}

@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background-image: url('/static/useronboard/login/images/desktopbckg.png'); */
+    background-repeat: no-repeat;
+    font-family: tahoma;
+    /* overflow: hidden; */
+
+}
+
+body {
+    background-image: url('/static/useronboard/login/images/desktopbckg.png');
+    background-size: cover;
+    height: 105vh;
+    margin-bottom: 20px;
+}
+
+.mainsection {
+    background-color: white;
+    display: flex;
+    width: 80%;
+    /* overflow: hidden; */
+    margin: 50px auto;
+    border-radius: 20px;
+    /* grid-template-columns: 50% 50%; */
+    align-items: center;
+    justify-content: space-around;
+}
+
+button {
+    font-size: 1.1rem;
+    background-color: #2464b4;
+    padding: 10px;
+    border: none;
+    color: rgb(232, 231, 231);
+    border-radius: 10px;
+    width: 300px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.loginmainimg img {
+    margin-left: 50px;
+}
+
+button:hover {
+    background-color: #5393e1;
+    color: rgb(104, 102, 102);
+}
+
+.quote {
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* media query starts here ........... */
+@media only screen and (max-width: 865px) {
+
+    body {
+        background-image: url('/static/useronboard/login/images/mobilebkg.png');
+        background-size: cover;
+        /* overflow: hidden; */
+    }
+
+    .mainsection {
+        background-color: white;
+        display: inline;
+        width: 80%;
+        margin: 50px auto;
+        border-radius: 20px;
+        /* align-items: center; */
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .loginmainimg img {
+        width: 100vw;
+        margin-bottom: 50px;
+        margin-left: 0px;
+    }
+
+    .logoandwelcome img {
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size: 1.1rem;
+        background-color: white;
+        padding: 10px;
+        border: none;
+        color: #2464b4;
+        border-radius: 10px;
+        width: 300px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+    .quote {
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+}

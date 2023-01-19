@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background-image: url('/static/useronboard/login/images/desktopbckg.png'); */
+    background-repeat: no-repeat;
+    font-family: tahoma;
+    /* overflow: hidden; */
+
+}
+
+body {
+    background-image: url('/static/useronboard/login/images/desktopbckg.svg');
+    background-size: cover;
+    background-attachment: fixed;
+    /* height: 100vh; */
+    /* overflow: hidden; */
+    margin-bottom: 20px;
+}
+
+.mainsection {
+    /* background-color: red; */
+    background-color: white;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin: 30px auto;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    font-size: 1.1rem;
+    background-color: #2464b4;
+    padding: 10px;
+    border: none;
+    color: rgb(232, 231, 231);
+    border-radius: 10px;
+    width: 300px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+
+
+.loginmainimg img {
+    margin-left: 50px;
+    border-radius: 30px;
+
+}
+
+button:hover {
+    background-color: #5393e1;
+    color: rgb(104, 102, 102);
+}
+
+.quote {
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form input {
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    box-shadow: 2px 2px 10px 2px rgb(232, 231, 231);
+    margin: 4px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.logomobile {
+    display: none;
+}
+
+/* media query starts here ........... */
+@media only screen and (max-width: 865px) {
+
+    body {
+        background-image: url('/static/useronboard/login/images/mobilebkg.svg');
+        background-size: cover;
+        /* overflow: hidden; */
+    }
+
+    .mainsection {
+        background-color: white;
+        display: inline;
+        width: 80%;
+        margin: 50px auto;
+        border-radius: 20px;
+        /* align-items: center; */
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .loginmainimg img {
+        width: 100vw;
+        margin-bottom: 50px;
+        margin-left: 0px;
+    }
+
+    .logoandwelcome img {
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size: 1.1rem;
+        background-color: #2464b4;
+        padding: 10px;
+        border: none;
+        color: white;
+        border-radius: 10px;
+        width: 300px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+    .quote {
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .allformsection {
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.19);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.4px);
+        -webkit-backdrop-filter: blur(6.4px);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        padding-bottom: 40px;
+    }
+
+    .form input {
+        width: 70%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        box-shadow: 2px 2px 10px 2px rgb(232, 231, 231);
+        margin: 4px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+
+    .logomobile {
+        display: block;
+        text-align: center;
+        align-items: center;
+        width: 100vw;
+        padding: 20px;
+    }
+
+    .logomain {
+        display: none;
+    }
+
+}

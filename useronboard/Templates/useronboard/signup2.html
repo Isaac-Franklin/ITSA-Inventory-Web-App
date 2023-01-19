@@ -1,0 +1,80 @@
+<!-- @format -->
+
+{% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'useronboard/signup/css/style2.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Signup | ITSA Inventory System</title>
+	</head>
+	<body>
+		<main>
+            <div id="flash">
+                {% if messages %} {% for message in messages %}
+                <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                    <strong style="color: black">{{ message }}</strong>
+                </div>
+                {% endfor %} {% endif %}
+            </div>
+            <div class="mainsection">
+                <div class="logomobile">
+                    <img src={% static 'useronboard/login/images/itsalogo.PNG' %} />
+                </div>
+                <div class="loginmainimg">
+					<img src='{% static 'useronboard/login/images/Readinglist.gif' %}' />
+				</div>
+                <div class="allformsection">
+                    <div class="logoandwelcome">
+                        <img class="logomain" src={% static 'useronboard/login/images/itsalogo.PNG' %} />
+                        <h3>
+                            Kindly Complete The Form Below:
+                        </h3>
+                    </div><br/><br/>
+                    <div>
+                        <form method="POST" class="form"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <label>Company Name:<span style = 'color: red;'>*</span></label><br/>
+                            <input type="text" name="companyname" placeholder="Eg: IT Service Desk Africa" /><br/><br/>
+
+                            <label>Email address:<span style = 'color: red;'>*</span></label><br/>
+                            <input type="text" name="companymail" placeholder="Eg: info@itservicedeskafrica.com" /><br/><br/>
+
+                            <label>Phone Number:</label><br/>
+                            <input type="number" name="phonenumber" placeholder="Eg: 0803 566 8211" /><br/><br/>
+
+                            <label>Location:</label><br/>
+                            <input type="address" name="address" placeholder="Eg: #12 Saka Tinubu Str, Lagos" /><br/><br/>
+
+                            <label>Number of devices(laptops and desktops):<span style = 'color: red;'>*</span></label><br/>
+                            <input type="number" name="numofdevices" placeholder="Eg: 1000" /><br/><br/>
+
+                            <label>Your Company Website:<span style = 'color: red;'>*</span></label><br/>
+                            <input type="text" name="website" placeholder="Eg: itservicedeskafrica.com" /><br/><br/>
+
+                            <div>
+                                <label>Upload Your Company Logo[Optional]</label><br/>
+                            <input blank="true" class='profilepicinput' type="file" name="profilepic"  accept="image/png, image/gif, image/jpeg"/>
+							</div><br/><br/>
+
+                            <label>Password<span style = 'color: red;'>*</span></label><br/>
+                            <input type="password" name="password" placeholder="****" /><br/><br/>
+                            <label>Retype Password<span style = 'color: red;'>*</span></label><br/>
+                            <input
+                                type="password"
+                                name="rtpassword"
+                                placeholder="****"
+                            /><br/><br/>
+                            <button type = 'submit' name = 'submit'>Submit</button>
+                        </form>
+                    </div><br/><br/>
+                    <p>Have An Account Already? <a href={% url "userlogin" %}>Login </a> Instead</p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+{% endblock content %}

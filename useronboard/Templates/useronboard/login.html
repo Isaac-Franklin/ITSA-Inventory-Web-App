@@ -1,0 +1,52 @@
+<!-- @format -->
+
+{% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'useronboard/login/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Log In | ITSA Inventory System</title>
+	</head>
+	<body>
+		<main>
+			<div id="flash">
+				{% if messages %} {% for message in messages %}
+				<div class="alert alert-{{ message.tags}} m-0" role="alert">
+					<strong style="color: black">{{ message }}</strong>
+				</div>
+				{% endfor %} {% endif %}
+			</div>
+			<div class="formandimage">
+				<div class="loginmainimg">
+					<img src='{% static 'useronboard/login/images/Readinglist.gif' %}' />
+				</div>
+				<div class="form  data-aos="zoom-out-left"">
+					<div class="intosection">
+						<img src={% static 'useronboard/login/images/itsalogo.PNG' %} />
+						<h2>Welcome Back</h2>
+					</div>
+					<br/><br/>
+					<form method = "POST">
+						{% csrf_token %}
+						<label><p>Company Title</p></label><br/>
+						<input type="text" name="companyname" placeholder="Eg: IT Service Desk Africa" /><br/><br/>
+	
+						<label><p>Password</p></label><br/>
+						<input type="password" name="password" placeholder="****" /><br/><br/>
+						<button type="submit" name="submit">Access</button>
+					</form><br/><br/>
+					<div>
+						<p>Don't Have An Account Yet? <a href={% url 'UserSignupPage' %}>Create One</a></p>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	</body>
+</html>
+{% endblock content %}
