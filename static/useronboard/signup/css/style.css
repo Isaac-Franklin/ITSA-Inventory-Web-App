@@ -28,26 +28,51 @@ body {
     justify-content: space-around;
 }
 
+/* BUTTON EDITS STARTS HERE */
 button {
-    font-size: 1.1rem;
-    background-color: #2464b4;
-    padding: 10px;
-    border: none;
-    color: rgb(232, 231, 231);
-    border-radius: 10px;
-    width: 300px;
-    margin-top: 20px;
     cursor: pointer;
-    transition: 0.4s ease-in-out;
-}
+    font-weight: 700;
+    font-family: Helvetica,"sans-serif";
+    transition: all .2s;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background-color: #2464b4;
+    color: rgb(232, 231, 231);
+    border: 1px solid transparent;
+    display: flex;
+    /* width: 490px; */
+    align-items: center;
+    font-size: 15px;
+  }
+  
+  button:hover {
+    background-color: #2464b4;
+    color: rgb(232, 231, 231);
+  }
+  
+  button > svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform .3s ease-in-out;
+  }
+  
+  button:hover svg {
+    transform: translateX(5px);
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  
+/* BUTTON EDITS ENDS HERE */
 
 .loginmainimg img {
     margin-left: 50px;
-}
-
-button:hover {
-    background-color: #5393e1;
-    color: rgb(104, 102, 102);
 }
 
 .quote {
@@ -84,19 +109,6 @@ button:hover {
 
     .logoandwelcome img {
         margin-bottom: 20px;
-    }
-
-    button {
-        font-size: 1.1rem;
-        background-color: white;
-        padding: 10px;
-        border: none;
-        color: #2464b4;
-        border-radius: 10px;
-        width: 300px;
-        margin-top: 20px;
-        cursor: pointer;
-        transition: 0.4s ease-in-out;
     }
 
     .quote {

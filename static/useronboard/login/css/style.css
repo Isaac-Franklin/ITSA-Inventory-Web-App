@@ -38,16 +38,31 @@ main {
     height: 100%;
 }
 
-.form input {
+.form-control, #form12{
     width: 400px;
-    height: 50px;
-    padding: 10px;
     border: none;
-    box-shadow: 2px 2px 10px 2px rgb(232, 231, 231);
+}
+
+.form-outline{
+    width: 400px;
+    border: none;
+}
+
+.form input {
+    width: 550px;
+    height: 40px;
+    padding: 15px;
+    border: none;
     margin: 4px;
     border-radius: 10px;
     font-size: 1.1rem;
     padding: 10px;
+}
+
+.loginemailbox{
+    position: absolute;
+    width: 38px;
+    right: 10px;
 }
 
 .form p {
@@ -70,22 +85,57 @@ input:focus {
 }
 
 
-button {
+/* button {
     font-size: 1.1rem;
     background-color: #2464b4;
+    color: rgb(232, 231, 231);
     padding: 10px;
     border: none;
-    color: rgb(232, 231, 231);
     border-radius: 10px;
-    width: 400px;
+    width: 490px;
     cursor: pointer;
     transition: 0.4s ease-in-out;
-}
+} */
 
-button:hover {
-    background-color: #5393e1;
-    color: rgb(104, 102, 102);
-}
+/* BUTTON EDITS STARTS HERE */
+button {
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Helvetica,"sans-serif";
+    transition: all .2s;
+    padding: 10px 20px;
+    background-color: #2464b4;
+    color: rgb(232, 231, 231);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    display: flex;
+    /* width: 490px; */
+    align-items: center;
+    font-size: 15px;
+  }
+  
+  button:hover {
+    background-color: #2464b4;
+    color: rgb(232, 231, 231);
+  }
+  
+  button > svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform .3s ease-in-out;
+  }
+  
+  button:hover svg {
+    transform: translateX(5px);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  
+/* BUTTON EDITS ENDS HERE */
+
 
 /* LOGIN FORM SETUP SECTION ENDS HERE */
 

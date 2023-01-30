@@ -1,5 +1,4 @@
 <!-- @format -->
-
 {% load static %} {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +8,7 @@
 		<link rel="stylesheet" href={% static 'useronboard/signup/css/style2.css' %} />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
 		<title>Signup | ITSA Inventory System</title>
 	</head>
 	<body>
@@ -21,10 +21,9 @@
                 {% endfor %} {% endif %}
             </div>
             <div class="mainsection">
-                <div class="logomobile">
-                    <img src={% static 'useronboard/login/images/itsalogo.PNG' %} />
-                </div>
                 <div class="loginmainimg">
+                    <img class="logomain2" src={% static '\useronboard\login\images\ITSAlinkedlogo.jpg' %} />
+                    <p class='mobileintrotext'> building the largest Device Health Management System in Africa</p>
 					<img src='{% static 'useronboard/login/images/Readinglist.gif' %}' />
 				</div>
                 <div class="allformsection">
@@ -37,44 +36,75 @@
                     <div>
                         <form method="POST" class="form"  enctype="multipart/form-data">
                             {% csrf_token %}
-                            <label>Company Name:<span style = 'color: red;'>*</span></label><br/>
-                            <input type="text" name="companyname" placeholder="Eg: IT Service Desk Africa" /><br/><br/>
+                            <label>Company Name:<span style = 'color: red;'>*</span></label><br/><br/>
+                            <div class="form-outline">
+                                <input name='companyname' type="text" id="form12" class="form-control" />
+                                <label class="form-label" for="form12">Eg: IT Service Desk Africa</label>
+						    </div><br/><br/>
 
-                            <label>Email address:<span style = 'color: red;'>*</span></label><br/>
-                            <input type="text" name="companymail" placeholder="Eg: info@itservicedeskafrica.com" /><br/><br/>
+                            <label>Email address:<span style = 'color: red;'>*</span></label><br/><br/>
+                            <div class="form-outline">
+                                <input name='companymail' type="text" id="form12" class="form-control" />
+                                <label class="form-label" for="form12">Eg: info@itservicedeskafrica.com</label>
+						    </div><br/><br/>
 
-                            <label>Phone Number:</label><br/>
-                            <input type="number" name="phonenumber" placeholder="Eg: 0803 566 8211" /><br/><br/>
+                            <label>Phone Number:</label><br/><br/>
+                            <div class="form-outline">
+                                <input name='phonenumber' type="text" id="form12" class="form-control" />
+                                <label class="form-label" for="form12">Eg: 0803 566 8211</label>
+						    </div><br/><br/>
 
-                            <label>Location:</label><br/>
-                            <input type="address" name="address" placeholder="Eg: #12 Saka Tinubu Str, Lagos" /><br/><br/>
+                            <label>Location:</label><br/><br/>
+                            <div class="form-outline">
+                                <input name='address' type="text" id="form12" class="form-control" />
+                                <label class="form-label" for="form12">Eg: #12 Saka Tinubu Str, Lagos</label>
+						    </div><br/><br/>
 
-                            <label>Number of devices(laptops and desktops):<span style = 'color: red;'>*</span></label><br/>
-                            <input type="number" name="numofdevices" placeholder="Eg: 1000" /><br/><br/>
+                            <label>Number of devices(laptops and desktops):<span style = 'color: red;'>*</span></label><br/><br/>
+                            <div class="form-outline">
+                                <input name='numofdevices' type="number" id="form12" class="form-control" />
+                                <label class="form-label" for="form12">Eg: 1000</label>
+						    </div><br/><br/>
 
-                            <label>Your Company Website:<span style = 'color: red;'>*</span></label><br/>
-                            <input type="text" name="website" placeholder="Eg: itservicedeskafrica.com" /><br/><br/>
+                            <label>Your Company Website:<span style = 'color: red;'>*</span></label><br/><br/>
+                            <div class="form-outline">
+                                <input name='website' type="text" id="form12" class="form-control" />
+                                <label class="form-label" for="form12">Eg: itservicedeskafrica.com</label>
+						    </div><br/><br/>
 
-                            <div>
-                                <label>Upload Your Company Logo[Optional]</label><br/>
-                            <input blank="true" class='profilepicinput' type="file" name="profilepic"  accept="image/png, image/gif, image/jpeg"/>
-							</div><br/><br/>
+                            <div class='uploadpp'>
+                                <label name="profilepic" for="actual-btn" >
+                                    <img src={% static 'useronboard/login/images/profilepic.png' %} />
+                                    <input type="file" accept="image/png, image/gif, image/jpeg" name="profilepic" hidden id="actual-btn"/>Upload Your Company Logo[Optional]
+                                </label>
+                            
+							</div><br/><br/><br/>
 
-                            <label>Password<span style = 'color: red;'>*</span></label><br/>
-                            <input type="password" name="password" placeholder="****" /><br/><br/>
-                            <label>Retype Password<span style = 'color: red;'>*</span></label><br/>
-                            <input
-                                type="password"
-                                name="rtpassword"
-                                placeholder="****"
-                            /><br/><br/>
-                            <button type = 'submit' name = 'submit'>Submit</button>
+                            <label>Password<span style = 'color: red;'>*</span></label><br/><br/>
+                            <div class="form-outline">
+                                <input name='password' type="password" id="form12" class="form-control" />
+                                <label class="form-label" for="form12">****</label>
+						    </div><br/><br/>
+
+                            <label>Retype Password<span style = 'color: red;'>*</span></label><br/><br/>
+                            <div class="form-outline">
+                                <input name='rtpassword' type="password" id="form12" class="form-control" />
+                                <label class="form-label" for="form12">****</label>
+						    </div><br/><br/>
+                            <button type="submit" name="submit">
+                                <span>Submit</span>
+                                <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
+                                    <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
+                                </svg>
+                            </button>
                         </form>
                     </div><br/><br/>
                     <p>Have An Account Already? <a href={% url "userlogin" %}>Login </a> Instead</p>
                 </div>
             </div>
         </main>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js" ></script>
     </body>
 </html>
 {% endblock content %}
