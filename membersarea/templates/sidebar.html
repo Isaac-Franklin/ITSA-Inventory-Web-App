@@ -1,0 +1,150 @@
+{% load static %} 
+{% block content %}
+{% comment %} MAIN BIG SIDE BAR STARTS HERE {% endcomment %}
+<body>
+    <main class='main'>
+        <div class='hidearrow'>
+            <img src={% static 'general/img/hidearrow.png' %} title='Minimize Side Bar'/>
+        </div>
+        <div class='logo'>
+            <img src={% static 'general/img/ITSAlinkedlogo.jpg' %} />
+        </div>
+        <div class='profiletab'>
+            <img class='profiletabimg' src={% static 'general/img/profilewhite.png' %} />
+            <h3>IT Service Desk Africa</h3>
+            <p class='profileemail'>admin@itservicedeskafrica.com</p><br/>
+            <button>Visit Profile</button>
+        </div>
+        <div class='menu'>
+            <a href={% url 'Dashboard' %}>
+            <div class='bar devinv'>
+                <p>Dashboard</p>
+                <img src={% static 'general/img/dashboard.png' %} />
+            </div>
+            </a>
+            <a href={% url 'CommunityPage' %}>
+            <div class='bar devinv'>
+                <p>DHMS Community</p>
+                <img src={% static 'general/img/community.png' %} />
+            </div>
+            </a>
+            <a href={% url 'AllRegisterDevices' %}>
+            <div class='bar devinv'>
+                <p>Device Inventory</p>
+                <img src={% static 'general/img/inventory.png' %} />
+            </div>
+            </a>
+            <a href = {% url 'DeviceHistory' %}>
+            <div class='bar devinv'>
+                <p>Device History</p>
+                <img src={% static 'general/img/history.png' %} />
+            </div>
+            </a>
+            <a href={% url 'AllRegisterStaff' %}>
+            <div class='bar devinv'>
+                <p>Staff Hub</p>
+                <img src={% static 'general/img/staff.png' %} />
+            </div>
+            </a>
+        </div>
+
+        <div class='logout'>
+            <p>Logout</p>
+            <img src={% static 'general/img/logout.png' %} />
+        </div>
+    </main>
+
+        {% comment %} MAIN BIG SIDE BAR ENDS HERE {% endcomment %}
+
+        {% comment %} SMALL SIDE BAR STARTS HERE   {% endcomment %}
+    <nav class='nav'>
+        <div class='outsidebar'>
+            <img src={% static 'general/img/outarrow.png' %} title='Show Full Side Bar'/>
+        </div>
+        <div class='navlogo'>
+            <img src={% static 'general/img/itsalogo.png' %} title='IT Service Desk Africa'/>
+        </div>
+        <div class='navimages'>
+            <div>
+                <img src={% static 'general/img/profilewhite.png' %} title='My Profile' />
+            </div>
+            <a href={% url 'Dashboard' %}>
+            <div>
+                <img src={% static 'general/img/dashboard.png' %} title='Dashboard' />
+            </div>
+            </a>
+            <a href={% url 'AllRegisterDevices' %}>
+            <div>
+                <img src={% static 'general/img/inventory.png' %} title='My Inventory' />
+            </div>
+            </a>
+            <a href={% url 'CommunityPage' %}>
+            <div>
+                <img src={% static 'general/img/community.png' %} title='Community' />
+            </div>
+            </a>
+            <a href = {% url 'DeviceHistory' %}>
+            <div>
+                <img src={% static 'general/img/history.png' %} title='Devices History' />
+            </div>
+            </a>
+            <a href={% url 'AllRegisterStaff' %}>
+            <div>
+                <img src={% static 'general/img/staff.png' %} title='Staff Hub' />
+            </div>
+            </a>
+        </div>
+        <div class='navlogout'>
+            <img src={% static 'general/img/logout.png' %} title='Logout' />
+        </div>
+    </nav>
+
+    <div>
+        <div class='topbar'>
+            <div class='introandnoticemobile'>
+                <div>
+                    <h3>My Inventory System</h3>
+                </div>
+                <div class='notificationmobile'>
+                    <img src={% static 'general/img/notification2.png' %} />
+                </div>
+                <div class='showbararrow'>
+                    <img class='downarrow' src={% static 'general/img/downarrow.png' %} />
+                    <img class='uparrow' src={% static 'general/img/uparrow.png' %} />
+                </div>
+            </div>
+            <div class='searchandtools'>
+                <div>
+                    <form class='form'>
+                        <div class="form-outline">
+                            <img class='loginemailbox' src={% static 'general/img/search.png' %} />
+                            <input name='companyname' type="text" id="form12" class="form-control" />
+                            <label class="form-label" for="form12">Search Here...</label>
+                        </div>
+                    </form>
+                </div>
+                <div class='toolsandvisit'>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Download Drivers
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Download HP Drivers</a>
+                        <a class="dropdown-item" href="#">Download Dell Drivers</a>
+                        <a class="dropdown-item" href="#">Access SOPHOS Security Software</a>
+                        </div>
+                    </div>
+                    <a target= '_blank' href='https://itservicedeskafrica.com/home/'><div class='visititsa'>
+                        <button>Visit ITSA Website</button>
+                    </div></a>
+                </div>
+                <div class='notification'>
+                    <div class='notifydot'></div>
+                    <img src={% static 'general/img/notification2.png' %} />
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} SMALL SIDE BAR ENDS HERE   {% endcomment %}
+</body>
+{% endblock content %}

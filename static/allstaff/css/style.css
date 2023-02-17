@@ -1,0 +1,132 @@
+.mainsectionallregistered{
+    width: 100%;
+    padding-left: 6%;
+    padding-top: 5%;
+    /* background-color: red; */
+    transition: ease-in-out 0.4s;
+}
+
+.stafftablehere{
+    margin-top: 50px;
+}
+
+.stafftablehere h1{
+    color: #2464b4;
+    margin-bottom: 10px;
+}
+
+/* TABLE STARTS HERE */
+table td a{
+    color: black
+}
+.devicesinvintro{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    align-items: center;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    /* border-collapse: collapse; */
+    border: 1px solid white;
+    width: 100%;
+    font-size: 1.2rem;
+    margin: auto;
+    margin-bottom: 60px;
+    overflow: scroll;
+}
+
+td,
+th {
+    border: 1px solid #2464b4;
+    text-align: left;
+    padding: 8px;
+}
+th{
+    border: 1px solid #2464b4;
+    text-align: left;
+    padding: 8px;
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #2464b4;
+    /* background-color: #19193a3d; */
+}
+tr:nth-child(odd) {
+    color: black;
+    background-color: grey;
+    /* background-color: #19193a3d; */
+}
+
+table button{
+    border: none;
+    background-color: white;
+    color: #2464b4;
+    padding: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.seealldevices{
+    border: none;
+    background-color: white;
+    color: #2464b4;
+    padding: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 15px;
+    /* position: absolute;
+    right: 0px; */
+}
+
+.deviceinventorysection{
+    margin-top: 50px;
+    overflow-x: scroll;
+}
+table{
+    overflow-x: scroll;
+}
+
+.deviceinventorysection h1{
+    color:#2464b4
+}
+.deviceinventorysection p{
+    color:black;
+    font-size: 1.2rem;
+}
+.deviceinventorysection strong{
+    color:black;
+    font-size: 1.2rem;
+}
+/* TABLE ENDS HERE */
+
+
+.stafftablehere p{
+    color:black;
+    font-size: 1.2rem;
+}
+.stafftablehere strong{
+    color:black;
+    font-size: 1.2rem;
+}
+
+
+
+@media only screen and (max-width: 750px){
+    .mainsectionallregistered{
+    overflow: hidden;
+        background-color: #19193a3d;
+        padding-left: 16%;
+        padding-top: 17%;
+    }
+
+    .stafftablehere{
+        overflow-x: scroll;
+    }
+}

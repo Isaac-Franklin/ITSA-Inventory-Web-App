@@ -41,6 +41,7 @@ main {
 .form-control, #form12{
     width: 400px;
     border: none;
+    background-color: transparent;
 }
 
 .form-outline{
@@ -49,11 +50,12 @@ main {
 }
 
 .form input {
-    width: 550px;
+    width: 400px;
     height: 40px;
     padding: 15px;
     border: none;
     margin: 4px;
+    background-color: transparent;
     border-radius: 10px;
     font-size: 1.1rem;
     padding: 10px;
@@ -103,7 +105,7 @@ button {
     font-weight: 700;
     font-family: Helvetica,"sans-serif";
     transition: all .2s;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: #2464b4;
     color: rgb(232, 231, 231);
     border: 1px solid transparent;
@@ -112,6 +114,11 @@ button {
     /* width: 490px; */
     align-items: center;
     font-size: 15px;
+  }
+
+  .formbtn{
+    border-radius: 50px; 
+
   }
   
   button:hover {
@@ -132,7 +139,6 @@ button {
   button:active {
     transform: scale(0.95);
   }
-  
   
 /* BUTTON EDITS ENDS HERE */
 
@@ -190,7 +196,7 @@ button {
     }
 
     button {
-        width: 300px;
+        width: 170px;
     }
 
     .form input {

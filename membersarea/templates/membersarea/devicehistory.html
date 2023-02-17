@@ -1,0 +1,50 @@
+{% include 'general.html' %} 
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'devicehistory/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Device Repairs History | ITSA Inventory System</title>
+	</head>
+    <body>
+        <div class='shadow'></div>
+        <div class='mainsectionallregisteredoutter'>
+            <div class='mainsectionallregistered'>
+                <div class='registerdeviceintro'>
+                    <h4><a href= {% url 'Dashboard' %} >Dashboard</a> > All Devices History </h4>
+                </div>
+                <div class='mainsectionhere'>
+                    <div class='repairsintro'>
+                        <div>
+                            <h1>Device Repairs History Records</h1>
+                        </div>
+                        <div class='repairsintroinner'>
+                            <div>
+                                <button>Create A Ticket</button>
+                            </div>
+                            <a target='_blank' href="https://api.whatsapp.com/send?phone=23408035668211">
+                                <div class='repairsintroinner2'>
+                                    <button>An Emergency? Contact Support Now!</button>
+                                    <img src={% static 'devicehistory/img/whatsapp.png' %} />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h1>All Device Repairs And Maintainance History Will Be Displayed Here</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <html>
+        {% endblock %}

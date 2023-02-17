@@ -1,0 +1,33 @@
+.mainsectionallregistered{
+    width: 100%;
+    padding-left: 6%;
+    padding-top: 5%;
+    /* background-color: red; */
+    transition: ease-in-out 0.4s;
+}
+
+.communityintro h1{
+    color: #2464b4;
+}
+
+
+.mainbodysection h1{
+    color: rgb(85, 85, 85);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 750px){
+    .mainsectionallregistered{
+    overflow: hidden;
+        background-color: #19193a3d;
+        padding-left: 16%;
+        padding-top: 17%;
+    }
+}

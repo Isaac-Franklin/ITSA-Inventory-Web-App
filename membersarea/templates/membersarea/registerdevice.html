@@ -1,0 +1,124 @@
+{% include 'general.html' %} 
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'registerdevice/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Register A Device | ITSA Inventory System</title>
+	</head>
+    <body>
+        <div class='shadow'></div>
+        <div class='mainsectionregisteroutter'>
+            <div class='mainsectionregister'>
+                <div id="flash">
+                    {% if messages %} {% for message in messages %}
+                    <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                        <strong style="color: red">{{ message }}</strong><small>Refresh page to remove</small>
+                    </div>
+                    {% endfor %} {% endif %}
+                </div>
+                <div class='registerdeviceintro'>
+                    <h4><a href= {% url 'Dashboard' %} >Dashboard</a> > Register A Device </h4>
+                </div>
+                <div>
+                    <h4>Lets Register This Device In 2 Minutes Or Less</h4>
+                    <div>
+                        <div class='deviceregisterform'>
+                            <div>
+                                <h3>Device Type?</h3>
+                                <div class='whatkindofdevice'>
+                                    <div name='laptop' class='typeofdevice laptop'>
+                                        <img src={% static 'registerdevice/img/laptop.png' %} />
+                                        <h4>A Laptop</h4>
+                                    </div>
+                                    <div name='desktop' class='typeofdevice desktop'>
+                                        <img src={% static 'registerdevice/img/desktop.png' %} />
+                                        <h4>A Desktop</h4>
+                                    </div>
+                                </div>
+                                <a href = {% url 'AllRegisterDevices' %}><button>See All Registered Devices > </button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='registerdeviceformmodal'>
+                    <img  class='closemodalsign' src={% static 'dashboard/img/closenav2.png' %} /><br/>
+                    <div class='staffformintro devicetypehere'>
+                        <img src={% static 'registerdevice/img/laptop.png' %} /><br/>
+                        <h1>Kindly Complete The <span></span> Registeration</h1>
+                    </div>
+                    <div>
+                        <form>
+                            <div>
+                                 <div>
+                                    <input type='text' class='hide' id='typeofdevicevalue' value='' placeholder='Device Type'/><br/><br/>
+                                </div>
+                                <div>
+                                    <label><p>Device Brand Name</p><label>
+                                    <input type='text' placeholder='Enter Device Brand'/><br/><br/>
+                                </div>
+                            </div>
+                            <div>
+                                 <div>
+                                    <label><p>Who's The Device User?</p><label>
+                                    <input type='text' placeholder='Enter The Full Name Of The Device User'/><br/><br/>
+                                </div>
+                                <div>
+                                    <label><p>Whats The Device Operating System?</p><label>
+                                    <input type='text' placeholder='Device OS'/><br/><br/>
+                                </div>
+                            </div>
+                            <div>
+                                 <div>
+                                    <label><p>Whats The Device IP Address?</p><label>
+                                    <input type='text' placeholder='Device IP Address'/><br/><br/>
+                                </div>
+                                <div>
+                                    <label><p>Where's This Device Located?</p><label>
+                                    <input type='text' placeholder='Device Location'/><br/><br/>
+                                </div>
+                            </div>
+                            <div>
+                                 <div>
+                                    <label><p>What's The Device Processor?</p><label>
+                                    <input type='text' placeholder='Device Processor'/><br/><br/>
+                                </div>
+                                <div>
+                                    <label><p>What's The Device Serial Number?</p><label>
+                                    <input type='text' placeholder='Device Serial Number'/><br/><br/>
+                                </div>
+                            </div>
+                            <div>
+                                 <div>
+                                    <label><p>What's The Device Cost Of Purchase?</p><label>
+                                    <input type='text' placeholder='Enter Device Cost Of Purchase'/><br/><br/>
+                                </div>
+                                <div>
+                                    <label><p>What's The Device Period Of Purchase?</p><label>
+                                    <input type='text' placeholder='Device Period Of Purchase'/><br/><br/>
+                                </div>
+                            </div>
+                            <div class='formbtns'>
+                                <button>Register Device</button>
+                            </div><br>
+                        </form>
+                        <div class='closemodal'>
+                            <button>Cancel</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src={% static 'registerdevice/js/main.js' %}></script>
+    </body>
+</html>
+{% endblock %}

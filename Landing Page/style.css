@@ -1,0 +1,565 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-transform: capitalize;
+}
+
+body{
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Poppins', tahoma;
+    background-color: #b3d9fc9d;
+}
+
+.main2{
+    background: url(./assets/inventoryman.jpg);
+    background-position:center;
+    background-attachment: fixed;
+    height: 70vh;
+    width: 100vw;
+    background-size: cover;
+    filter: brightness(30%);
+    background-repeat: no-repeat;
+    margin-top: 0px;
+}
+
+.main{
+    position: absolute;
+    height: 70vh;
+    top: 20px;
+    width: 100vw;
+}
+
+nav{
+    display: flex;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: white;
+    padding: 5px 10px;
+    justify-content: space-between;
+    align-items: center;
+    animation: reveal 4s;
+    z-index: 11;
+}
+
+@keyframes reveal{
+    0%{opacity: 0; margin-top:-1500px;}
+    20%{opacity: 1; margin-top:-1500px;}
+    30%{margin-top:0px;}
+    80%{opacity: 1;}
+    100%{opacity: 1; width: 100%}
+  }
+
+nav img{
+    width: 200px;
+}
+
+
+nav button{
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    margin: 5px;
+    border: none;
+    color: white;
+    background-color: #191c36;
+    /* background-color: #2464b4; */
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+nav ul li{
+    margin-right: 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+nav ul{
+    display: flex;
+}
+
+.introtext {
+    width: 45%;
+    margin-top: 10%;
+    margin-left: 30px;
+    color: white;
+}
+
+/* INTRO TEXT ANIMATION STARTS HERE */
+.introtext {
+    animation: heroslide 4s;
+    animation-delay: 0s;
+  }
+
+  @keyframes heroslide{
+    0%{margin-left:-800px; opacity: 0;}
+    20%{margin-left:-800px;opacity: 0;}
+    35%{margin-left:30px; opacity: 1;}
+  100%{margin-left:30px; opacity: 1;}
+  }
+
+/* INTRO TEXT ANIMATION ENDS HERE */
+
+.introtext button{
+    margin-top: 20px;
+    background-color: #191c36;
+    /* background-color: #191c36; */
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+ 
+}
+
+.midboxes{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-around;
+    margin-top: -60px;
+    margin-bottom: 50px;
+}
+
+.midbox{
+    padding: 20px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.midbox3b{
+    background-image: url(./assets/dhmsmedic.png);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    border-radius: 10px;
+    filter: brightness(30%);
+    background-color: #58a3eb;
+}
+.midbox1b{
+    background-image: url(./assets/inventoryman.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    filter: brightness(30%);
+    border-radius: 10px;
+    background-color: #58a3eb;
+}
+.midbox2b{
+    background-image: url(./assets/repairman.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    border-radius: 10px;
+    filter: brightness(30%);
+    background-color: #58a3eb;
+}
+
+.midbox1, .midbox2, .midbox3{
+    position: relative;
+}
+
+.midbox1 p {
+    display: none;
+    width: 300px;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-size: 1.2rem;
+    color: white;
+    padding: 10px;
+    /* border-radius: 10px; */
+    background: rgba(167, 167, 167, 0.158);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+}
+.midbox2 p{
+    display: none;
+    width: 300px;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-size: 1.2rem;
+    color: white;
+    padding: 10px;
+    /* border-radius: 10px; */
+    background: rgba(167, 167, 167, 0.158);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+}
+.midbox3 p{
+    display: none;
+    width: 300px;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-size: 1.2rem;
+    color: white;
+    padding: 10px;
+    /* border-radius: 10px; */
+    /* background-color: black; */
+    /* From https://css.glass */
+    background: rgba(167, 167, 167, 0.158);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+}
+.midbox1 h2{
+    margin-left:5px;
+    position: absolute;
+    bottom: -20px;
+    font-size: 1.3rem;
+    color: white;
+    padding: 20px;
+}
+
+/* MIDBOX1 ANIMATION STARTS HERE */
+
+.noexpandeffect{
+    display: none;
+}
+.noexpandeffect2{
+    display: none;
+}
+.noexpandeffect3{
+    display: none;
+}
+.expandeffect{
+    display: block;
+    animation: scale 1s;
+}
+
+@keyframes scale{
+    0%{opacity: 0;}
+    20%{transform: translateX(15%);}
+    35%{transform: translateX(-12%)}
+    100%{opacity: 1; transform: translateX(0%)}
+    /* 0%{transform: scale(0);}
+    20%{transform: scale(0);}
+    35%{transform: scale(1)}
+  100%{transform: scale(1)} */
+}
+
+.expandeffect2{
+    display: block;
+    animation: scale2 1s;
+}
+
+@keyframes scale2 {
+    0%{transform: scale(0);}
+    20%{transform: scale(0);}
+    35%{transform: scale(1)}
+  100%{transform: scale(1)} 
+}
+
+.riseeffect {
+    animation: slide 4s;
+}
+
+  @keyframes slide{
+    0%{margin-left:-1800px;}
+    20%{margin-left:-1800px;}
+    35%{margin-left:5px;}
+  100%{margin-left:5px;}
+  }
+
+
+/* MIDBOX1 ANIMATION ENDS HERE */
+
+
+.midbox1 h2{
+    margin-left:5px;
+    position: absolute;
+    bottom: 15px;
+    font-size: 1.3rem;
+    color: white;
+    padding: 20px;
+}
+
+.midbox2 h2{
+    margin-left:5px;
+    position: absolute;
+    bottom: 15px;
+    font-size: 1.3rem;
+    color: white;
+    padding: 20px;
+}
+
+
+.midbox3 h2{
+    margin-left:5px;
+    position: absolute;
+    bottom: 15px;
+    font-size: 1.3rem;
+    color: white;
+    padding: 20px;
+}
+/* START OF MAIN BODY SECTION */
+
+.section{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.section p{
+    width: 80%;
+}
+.section img{
+    width: 100%;
+}
+
+hr{
+    color: #191c36;
+    background-color: #191c36;
+}
+
+.sectiooutbackground{
+    background-image: url('./assets/repairman.jpg');
+    filter: brightness(30%);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+
+/* FOOTER SECTION */
+
+
+.introfooter img{
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.introfooter p{
+    font-size: 0.9rem;
+}
+footer{
+    background-color: white;
+    width: 100vw;
+    color: black;
+    padding: 10px;
+    display: grid;
+    padding-left: 30px;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-column-gap: 10px;
+    justify-content: space-between;
+}
+
+.socials img{
+    width: 30px;
+}
+
+footer h3{
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+footer button{
+    background-color: #191c36;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.newsletter input{
+    width: 200px;
+    padding: 10px;
+
+}
+
+.mobilenav{
+    display: none;
+    z-index: 5;
+}
+.mobilelogo img, .mobilelogo{
+    display: none;
+    z-index: 5;
+}
+
+.hamburger{
+    display: none;
+}
+@media only screen and (max-width: 950px){
+    .introtext button{
+        margin-top: 20px;
+        background-color: white;
+        /* background-color: #191c36; */
+        border: none;
+        color: #191c36;
+        font-weight: bold;
+        padding: 15px;
+        border-radius: 10px;
+     
+    }
+    nav{
+        display: none;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        background-color: white;
+        padding: 5px 10px;
+        justify-content: space-between;
+        align-items: center;
+        animation: reveal 4s;
+        z-index: 11;
+    }
+
+
+    /* HAMBURGER */
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        width: 60px;
+        /* position: absolute; */
+        /* right: 0px; */
+        z-index: 5;
+        background-color:#58a3eb;
+    }
+    .bar {
+        width: 2rem;
+        display: block;
+        height: 0.3rem;
+        margin: 0.5rem auto;
+        background-color: #fff;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(0.8rem) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-0.8rem) rotate(-45deg);
+    }
+
+    .main2{
+        background: url(./assets/inventoryman.jpg);
+        background-position:top;
+        background-attachment: fixed;
+        height: 50vh;
+        width: 100%;
+        background-size: cover;
+        filter: brightness(30%);
+        background-repeat: no-repeat;
+        margin-top: 0px;
+    }
+    .main{
+        position: absolute;
+        height: 50vh;
+        top: 20px;
+        width: 100vw;
+    }
+    .introtext {
+        width: 90%;
+        margin-top: 40%;
+        margin-left: 30px;
+        color: white;
+    }
+    
+    .introtext  h1{
+        font-size: 1.3rem;
+    }
+    .mobilelogo img, .mobilelogo{
+        display: block;
+    }
+    .mobilelogo img{
+        width: 200px;
+        z-index: 5;
+        display: block;
+    }
+
+    .mobilenav{
+        display: block;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .midboxes{
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: space-around;
+        margin-top: -60px;
+        margin-bottom: 50px;
+    }
+    
+
+    /* SECTION MOBILE */
+    .section{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    }
+
+    .section p{
+        width: 80%;
+    }
+    .section img{
+        width: 100%;
+    }
+
+    footer{
+        background-color: white;
+        width: 100vw;
+        color: black;
+        padding: 10px;
+        display: grid;
+        padding-left: 30px;
+        grid-template-columns: 100%;
+        text-align: center;
+        grid-column-gap: 10px;
+        justify-content: space-between;
+    }
+
+    .socials {
+        margin-bottom: 20px;
+    }
+
+    .socials img{
+        width: 30px;
+    }
+    
+    footer h3{
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    footer button{
+        background-color: #191c36;
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    
+
+
+}

@@ -1,0 +1,50 @@
+{% include 'general.html' %} 
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'uploaddevicecsv/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>All Uploaded Devices | ITSA Inventory System</title>
+	</head>
+    <body>
+        <div class='shadow'></div>
+        <div class='mainsectionregisteroutter'>
+            <div class='mainsectionregister'>
+                <div class='uploaddevicecsvintro'>
+                    <h3><a href={% url 'Dashboard' %}> Dashboard </a> > <a href={% url 'UploadDevices' %}>Upload Devices Via CSV File</a> > All Uploaded Devices</h3>
+                </div>
+                <div>
+                    <h3>You have uploaded {{deviceslist.count}} of devices list</h3>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>Device List Name</th>
+                                <th>Uploaded On</th>
+                            </tr>
+                            {% for deviceslist in deviceslist %}
+                                <tr>
+                                    <td>
+                                        {% comment %} <a target='_blank' href= /member/downloadfile/{{ deviceslist.mainfile }}/ ><h4>{{ deviceslist.mainfile }}</a></h4></br> {% endcomment %}
+                                        <h4>{{ deviceslist.mainfile }}</h4></br>
+                                        {% comment %} <a target='_blank' href= /member/displayfileuploaded/{{ deviceslist.mainfile }}/ ><h4>{{ deviceslist.mainfile }}</a></h4></br> {% endcomment %}
+                                    </td>
+                                  <td>{{deviceslist.created_at}}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src={% static 'uploaddevicecsv/js/main.js' %}></script>
+    </body>
+</html>
+{% endblock %}

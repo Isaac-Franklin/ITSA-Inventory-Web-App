@@ -1,0 +1,65 @@
+{% include 'general.html' %} 
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'allstaff/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>All Registered Staff | ITSA Inventory System</title>
+	</head>
+    <body>
+        <div class='shadow'></div>
+        <div class='mainsectionallregisteredoutter'>
+            <div class='mainsectionallregistered'>
+                <div class='registerdeviceintro'>
+                    <h4><a href= {% url 'Dashboard' %} >Dashboard</a> > All Registered Staff </h4>
+                </div>
+                <div class='stafftablehere'>
+                    <div>
+                        <h1>All Registered Staff Member</h1>
+                        <p>You have registered <strong>5</strong> Staff Members so far</p>
+                    </div>
+                    <table>
+                        <tr>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Email Address</th>
+                          <th>Phone Number</th>
+                          <th>Assigned Device's ID</th>
+                          <th>Work Office</th>
+                          <th>Device Status</th>
+                          <th>Job Start Date</th>
+                          {% comment %} <th>Status</th> {% endcomment %}
+                          <th>Terminate</th>
+                        </tr>
+                        <tr>
+                          <td><a href=''>John</a></td>
+                          <td>Doe</td>
+                          <td>john@gmail.com</td>
+                          <td>090123456789</td>
+                          <td>Toshiba-5G078509H</td>
+                          <td>Aba Office</td>
+                          <td>Good</td>
+                          <td>2020</td>
+                          {% comment %} <td>
+                            <button>Edit Details</button>
+                          </td> {% endcomment %}
+                          <td>
+                            <button>Delete Staff Data</button>
+                          </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src={% static 'allstaff/js/main.js' %}></script>
+    </body>
+</html>
+{% endblock %}

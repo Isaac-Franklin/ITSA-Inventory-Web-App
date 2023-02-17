@@ -1,0 +1,202 @@
+{% include 'general.html' %} 
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'allregistered/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>All Registered Devices | ITSA Inventory System</title>
+	</head>
+    <body>
+        <div class='shadow'></div>
+        <div class='mainsectionallregisteredoutter'>
+            <div class='mainsectionallregistered'>
+                <div class='registerdeviceintro'>
+                    <h4><a href= {% url 'Dashboard' %} >Dashboard</a> > <a href= {% url 'RegisterDevice' %}> Register A Device</a> > All Registered Devices </h4>
+                </div>
+
+                <div class='deviceinventorysection'>
+                    <div class='devicesinvintro'>
+                        <div>
+                            <h1>Device Inventory</h1>
+                            <p>You have registered <strong>{{numofdevices}}</strong> device(s) so far</p>
+                        </div>
+                        <div>
+                            {% comment %} <button class='seealldevices'>See All Devices</button> {% endcomment %}
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                          <th>Device IP</th>
+                          <th>Device Name</th>
+                          <th>Device MAC Address</th>
+                          <th>Device Network Adapter Company</th>
+                          <th>Device User</th>
+                          <th>Device Status</th>
+                          <th>Device Work Group</th>
+                          <th>Device Year Of Purchase</th>
+                          <th>Device Port Number</th>
+                          <th>Device Multiple Packet</th>
+                          {% comment %} <th>Status</th> {% endcomment %}
+                          <th>Device Type</th>
+                          <th>Device Location</th>
+                          <th>Device Brand</th>
+                          <th>Device OS</th>
+                          <th>Device Cost Of Purchase</th>
+                          <th>Device Depreciation Rate</th>
+                          <th>Device Unique ID</th>
+                          <th>Date Imported</th>
+                          <th>Terminate</th>
+                        </tr>
+                        {% for uploadedDevices in uploadedDevices %}
+                        {% if request.user == uploadedDevices.user %}
+                        <tr>
+                          <td>{{uploadedDevices.deviceip}}</td>
+                          <td>{{uploadedDevices.devicename}}</td>
+                          <td>{{uploadedDevices.devicemacaddress}}</td>
+                          <td>{{uploadedDevices.devicenetworkadaptercompany}}</td>
+                          <td><a href=''>{{uploadedDevices.deviceuser}}</a></td>
+                          <td>{{uploadedDevices.devicestatus}}</td>
+                          <td>{{uploadedDevices.deviceworkgroup}}</td>
+                          <td><div class='yearofpurchase'>{{uploadedDevices.deviceyearofpurchase}}</div></td>
+                          <td>{{uploadedDevices.deviceportnumber}}</td>
+                          <td>{{uploadedDevices.devicemultiplepacket}}</td>
+                          {% comment %}  {% endcomment %}
+                          <td>{{uploadedDevices.devicetype}}</td>
+                          <td>{{uploadedDevices.devicelocation}}</td>
+                          <td>{{uploadedDevices.devicebrand}}</td>
+                          <td>{{uploadedDevices.deviceos}}</td>
+                          <td>{{uploadedDevices.devicecostofpurchase}}</td>
+                          <td class='depreciationrate'>{{uploadedDevices.devicedepreciationrate}}</td>
+                          {% if uploadedDevices.devicename %}
+                          <td>{{uploadedDevices.devicename}}-{{uploadedDevices.deviceip}}</td>
+                          {% else %}
+                          <td>{{request.user}}-{{uploadedDevices.deviceip}}</td>
+                            {% endif %}
+                          <td>{{uploadedDevices.created_at}}</td>
+                          <td>
+                            <button>Delete Device Data</button>
+                          </td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </table>
+                </div>
+                {% comment %} DETAILS DROP DOWN STARTS HERE {% endcomment %}
+                <div class='showdevicedetails'>
+                    <img  class='closemodalsign' src={% static 'dashboard/img/closenav2.png' %} /><br/>
+                    <div class='staffformintro devicetypehere'>
+                        <img src={% static 'registerdevice/img/laptop.png' %} /><br/>
+                        <h1>Details For <span>This</span> Device</h1>
+                    </div>
+                    <div>
+                        {% comment %} DEVICE DATA PROPER STARTS HERE {% endcomment %}
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device Type: </h2>
+                            </div>
+                            <div>
+                                <h1>Laptop</h1>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device Brand: </h2>
+                            </div>
+                            <div>
+                                <h1>Toshiba</h1>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device User: </h2>
+                            </div>
+                            <a href=''><div>
+                                <h1>John Doe</h1>
+                            </div></a>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device OS: </h2>
+                            </div>
+                            <div>
+                                <h1>Windows 10 Pro</h1>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device IP Address: </h2>
+                            </div>
+                            <div>
+                                <h1>1415234567890</h1>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device Location: </h2>
+                            </div>
+                            <div>
+                                <h1>Aba</h1>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device Processor: </h2>
+                            </div>
+                            <div>
+                                <h1>2.40GHz</h1>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device Serial Number: </h2>
+                            </div>
+                            <div>
+                                <h1>5G078509H</h1>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device Cost Of Purchase: </h2>
+                            </div>
+                            <div>
+                                <h1>₦104000</h1>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device Period Of Purchase: </h2>
+                            </div>
+                            <div>
+                                <h1>2022</h1>
+                                <h4>Device Depreciation Period Is <span>3</span> Years</h4>
+                            </div>
+                        </div>
+                        <div class='detaildetaillist'>
+                            <div>
+                                <h2>Device's Unique ID: </h2>
+                            </div>
+                            <div>
+                                <h1>Toshiba-5G078509H</h1>
+                            </div>
+                        </div>
+                        {% comment %} DEVICE DATA PROPER ENDS HERE {% endcomment %}
+                        <div class='closemodal'>
+                            <button>Close</button>
+                        </div>
+                    </div>
+                </div>
+                {% comment %} DETAILS DROP DOWN ENDS HERE {% endcomment %}
+            </div>
+        <div>
+        <script src={% static 'allregistered/js/main.js' %}></script>
+    </body>
+    </html>
+{% endblock %}

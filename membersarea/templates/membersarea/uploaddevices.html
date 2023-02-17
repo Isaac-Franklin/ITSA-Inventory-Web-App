@@ -1,0 +1,98 @@
+{% include 'general.html' %} 
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'uploaddevicecsv/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Upload Devices | ITSA Inventory System</title>
+	</head>
+    <body>
+        <div class='shadow'></div>
+        <div class='mainsectionregisteroutter'>
+            <div class='mainsectionregister'>
+                <div class='uploaddevicecsvintro'>
+                    <h3><a href={% url 'Dashboard' %}> Dashboard </a> > Upload Devices Via CSV File</h3>
+                </div>
+                <div class='notesection'>
+                        <div class='deviceuploadintro'>
+                            <div>
+                                <h3>
+                                    Note: For your CSV to upload and serve properly, you need to be sure that 
+                                    the following fields are present in the file:</br></br>
+                                </h3>
+                            </div>
+                            <div class='deviceuploadintrobtns buttonsdesktop'>
+                                    <div class='activateuploadform'>
+                                        <button>Upload Devices List</button>
+                                    </div>
+                                <a href = /member/alluploaddevices/{{request.user}}/><button>See All Uploaded Devices</button></a>
+                                {% comment %} <a href = {% url 'AllRegisterDevices' %}><button>See All Uploaded Devices</button></a> {% endcomment %}
+                            </div>
+                        </div>
+                        <ol>
+                            <li>Device Connectivity IPv4 Address</li>
+                            <li>Device Name or Computer Name</li>
+                            <li>Device Network Adapter Company</li>
+                            <li>Device Status</li>
+                        </ol>
+                        <h3>
+                        Other Details Can Be Updated After The Upload Is Completed
+                        </h3>
+                </div>
+
+                {% comment %} UPLOAD DEVICE MODAL STARTS HERE {% endcomment %}
+                    <div class='deviceuploadintrobtns buttonsmobile'>
+                            <div class='activateuploadform activateuploadform2'>
+                                <button>Upload Devices List</button>
+                            </div>
+                        <a href = alluploaddevices/{{request.user}}/ ><button>See All Uploaded Devices</button></a>
+                        {% comment %} <a href = {% url 'AllRegisterDevices' %}><button>See All Uploaded Devices</button></a> {% endcomment %}
+                    </div>
+
+                {% comment %} UPLOAD DEVICE MODAL ENDS HERE {% endcomment %}
+                {% comment %} BUTTONS MOBILE STARTS HERE {% endcomment %}
+                <div class='registerdeviceformmodal'>
+                    <div class='staffformintro devicetypehere'>
+                        <img src={% static 'registerdevice/img/laptop.png' %} /><br/>
+                        <h1>Kindly Upload File</h1>
+                    </div>
+                    <div>
+                        <form method='POST' enctype="multipart/form-data" >
+                            {% csrf_token %}
+                            <div>
+                                <input name='username' type = 'text' class='hide' value = {{request.user}} />
+                                <div>
+                                    <label><p>Click To Upload</p>
+                                        <img src={% static 'dashboard/img/csv.png' %} />
+                                        <input name='csv_file' hidden type='file' /><br/><br/>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class='formbtns'>
+                                <button>Submit</button>
+                            </div><br>
+                        </form>
+                        <a  class='samplelistbtn' href={% url 'downloadSampleFile' %}><div>
+                            <Button>Download A Sample</Button>
+                        </div></a>
+                        <div class='closemodal'>
+                            <button>Cancel</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                {% comment %} UPLOAD DEVICE MODAL ENDS HERE {% endcomment %}
+            </div>
+        </div>
+        <script src={% static 'uploaddevicecsv/js/main.js' %}></script>
+    </body>
+</html>
+{% endblock %}

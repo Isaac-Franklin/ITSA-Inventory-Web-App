@@ -1,0 +1,298 @@
+.mainsectionallregistered{
+    width: 100%;
+    padding-left: 6%;
+    padding-top: 5%;
+    /* background-color: red; */
+    transition: ease-in-out 0.4s;
+}
+
+/* TABLE STARTS HERE */
+table td a{
+    color: black
+}
+.devicesinvintro{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    align-items: center;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    /* border-collapse: collapse; */
+    border: 1px solid white;
+    width: 100%;
+    font-size: 1.2rem;
+    margin: auto;
+    margin-bottom: 60px;
+    overflow: scroll;
+}
+
+td,
+th {
+    border: 1px solid #2464b4;
+    text-align: left;
+    padding: 8px;
+}
+th{
+    border: 1px solid #2464b4;
+    text-align: left;
+    padding: 8px;
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #2464b4;
+    /* background-color: #19193a3d; */
+}
+tr:nth-child(odd) {
+    color: black;
+    background-color: grey;
+    /* background-color: #19193a3d; */
+}
+
+table button{
+    border: none;
+    background-color: white;
+    color: #2464b4;
+    padding: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.seealldevices{
+    border: none;
+    background-color: white;
+    color: #2464b4;
+    padding: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 15px;
+    /* position: absolute;
+    right: 0px; */
+}
+
+.deviceinventorysection{
+    margin-top: 50px;
+    overflow-x: scroll;
+}
+table{
+    overflow-x: scroll;
+}
+
+.deviceinventorysection h1{
+    color:#2464b4
+}
+.deviceinventorysection p{
+    color:black;
+    font-size: 1.2rem;
+}
+.deviceinventorysection strong{
+    color:black;
+    font-size: 1.2rem;
+}
+/* TABLE ENDS HERE */
+
+/* DEVICE DETAILS DROP DOWN  STARTS HERE */
+
+.RegisterDevice{
+    display: flex;
+}
+.showdevicedetails{
+    height: 70%;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    /* background-color: #9c9c9c; */
+    box-shadow: 1px 1px 10px #888888;
+    border-radius: 15px;
+    position: absolute;
+    text-align: center;
+    top: 100px;
+    left: 25%;
+    overflow: scroll;
+    transition: ease-in-out 1s;
+    z-index: 6;
+    display: none;
+}
+
+.shadow{
+    background-color: rgba(0, 0, 0, 0.452);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    display: none;
+}
+
+.showdevicedetails::-webkit-scrollbar{
+    display: none;
+}
+
+.registerdeviceformmodalShow{
+    animation: showUp 1s;
+}
+
+
+
+@keyframes showUp {
+    0% { top: -1000px; }
+    100% { top: 100px;}
+}
+.registerdeviceformmodalRemove{
+    animation: RemoveModal 1s;
+}
+
+
+
+@keyframes RemoveModal {
+    0% { top: 1000px; }
+    100% { top: -1000px;}
+}
+
+
+.closemodalsign{
+    width: 40px;
+    position: fixed;
+    background-color: black;
+    padding: 5px;
+    border-radius: 20px;
+    top: 10px;
+    cursor: pointer;
+    right: 10px;
+}
+
+.showdevicedetails form input{
+    width: 150%;
+    height: 50px;
+    padding: 5px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 10px #888888;
+    color: black;
+}
+
+.showdevicedetails form{
+    margin: auto;
+    margin-top: 20px;
+    text-align: left;
+    /* background-color: red */
+}
+
+
+.showdevicedetails form button{
+    border: none;
+    background-color: #2464b4;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 1px 1px 10px #888888;
+    border-radius: 15px;
+}
+
+.showdevicedetails span{
+    color: #2464b4;
+}
+
+.closemodal button{
+    border: none;
+    background-color: #2464b4;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 1px 1px 10px #888888;
+    border-radius: 15px;
+}
+
+.formbtns{
+    display: flex;
+    justify-content: space-around;
+}
+
+.staffformintro img{
+    width: 40px;
+}
+
+.staffformintro {
+    color: #2464b4;
+    /* display: flex;
+    width: 50%;
+    justify-content: space-around;
+    margin: auto;
+    align-items: center; */
+}
+
+.shadow{
+    background-color: rgba(0, 0, 0, 0.452);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    display: none;
+}
+
+
+.showdevicedetails button{
+    letter-spacing: 3px;
+}
+
+
+/* DEVICE DETAILS DROP DOWN  ENDS HERE */
+
+/* DEVICE DETAILS LIST STARTS HERE */
+.detaildetaillist{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    text-align: auto;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.detaildetaillist h4{
+    color: black;
+}
+
+.detaildetaillist h1{
+    color: #2464b4;
+}
+.detaildetaillist h2{
+    color: black;
+    font: 0.8rem;
+}
+/* DEVICE DETAILS LIST ENDS HERE */
+
+@media only screen and (max-width: 750px){
+    .mainsectionallregistered{
+    overflow: hidden;
+        background-color: #19193a3d;
+        padding-left: 16%;
+        padding-top: 17%;
+    }
+
+    .showdevicedetails form input{
+        width: 100%;
+        height: 50px;
+        padding: 5px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 1px 1px 10px #888888;
+        color: black;
+    }
+}

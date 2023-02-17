@@ -1,0 +1,292 @@
+<!-- @format -->
+{% include 'general.html' %} 
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href={% static 'useronboard/login/images/itsalogo.PNG' %}> 
+		<link rel="stylesheet" href={% static 'dashboard/css/style.css' %} />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Dashboard | ITSA Inventory System</title>
+	</head>
+	<body>
+        <div class='shadow'></div>
+        <div class='mainbodyouter'>
+            <div class='mainbody'>
+                <div class='topmainbody'>
+                    <div class='dashboardintro'>
+                        <p>Dashboard ></p>
+                        <h1> Welcome Back,<br/> IT Service Desk Africa</h1>
+                        <blockquote>
+                            To state the facts frankly is not to despair the future nor indict the past. The prudent heir takes careful inventory of his legacies and gives a faithful accounting to those whom he owes an obligation of trust.<br/> <strong> John F. Kennedy</strong>
+                        </blockquote>
+                        <div id="flash">
+                            {% if messages %} {% for message in messages %}
+                            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                                <strong style="color: red">{{ message }}</strong><small>Refresh page to remove</small>
+                            </div>
+                            {% endfor %} {% endif %}
+                        </div>
+                    </div>
+                    <div class='RegisterDevice'>
+                        <div class='RegisterDeviceinner RegisterDeviceinner1'>
+                            <div class='onboardbox scanfordevices'>
+                                <img src={% static 'dashboard/img/cloud.png' %} />
+                                <h1>Scan Your Network For Connected Devices</h1>
+                            </div>
+                            <a href={% url 'UploadDevices' %}>
+                            <div class='onboardbox uploadcsvfile'>
+                                <img src={% static 'dashboard/img/csv.png' %} />
+                                <h1>Upload Devices Via A CSV File</h1>
+                            </div>
+                            </a>
+                        </div>
+                        {% comment %}  {% endcomment %}
+                        <div class='RegisterDeviceinner'>
+                            <a href= {% url 'RegisterDevice' %}><div class='onboardbox registerdevice'>
+                                <img src={% static 'dashboard/img/inventory2.png' %} />
+                                <h1>Register A New Device</h1>
+                            </div></a>
+                            <div class='onboardbox registerstaff'>
+                                <img src={% static 'dashboard/img/staff2.png' %} />
+                                <h1>Register A New Staff</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='deviceinventorysection'>
+                    <div class='devicesinvintro'>
+                        <div>
+                            <h1>Device Inventory</h1>
+                            <p>You have registered <strong>{{numofdevices}}</strong> devices so far</p>
+                        </div>
+                        <div>
+                            <a href = {% url 'AllRegisterDevices' %}><button class='seealldevices'>See Details Of All Registered Devices</button></a>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                          <th>Device IP</th>
+                          <th>Device Name</th>
+                          <th>Device MAC Address</th>
+                          <th>Device Network Adapter Company</th>
+                          <th>Device User</th>
+                          <th>Device Status</th>
+                          <th>Device Work Group</th>
+                          <th>Device Year Of Purchase</th>
+                          <th>Device Port Number</th>
+                          <th>Device Multiple Packet</th>
+                          {% comment %} <th>Status</th> {% endcomment %}
+                          {% comment %} <th>Device Type</th>
+                          <th>Device Location</th>
+                          <th>Device Brand</th>
+                          <th>Device OS</th>
+                          <th>Device Cost Of Purchase</th>
+                          <th>Device Depreciation Rate</th>
+                          <th>Device Unique ID</th>
+                          <th>Date Imported</th>
+                          <th>Terminate</th> {% endcomment %}
+                        </tr>
+                        {% for uploadedDevices in uploadedDevices %}
+                        {% if request.user == uploadedDevices.user %}
+                        <tr>
+                          <td>{{uploadedDevices.deviceip}}</td>
+                          <td>{{uploadedDevices.devicename}}</td>
+                          <td>{{uploadedDevices.devicemacaddress}}</td>
+                          <td>{{uploadedDevices.devicenetworkadaptercompany}}</td>
+                          <td><a href=''>{{uploadedDevices.deviceuser}}</a></td>
+                          <td>{{uploadedDevices.devicestatus}}</td>
+                          <td>{{uploadedDevices.deviceworkgroup}}</td>
+                          <td><div class='yearofpurchase'>{{uploadedDevices.deviceyearofpurchase}}</div></td>
+                          <td>{{uploadedDevices.deviceportnumber}}</td>
+                          <td>{{uploadedDevices.devicemultiplepacket}}</td>
+                          {% comment %}  {% endcomment %}
+                          {% comment %} <td>{{uploadedDevices.devicetype}}</td>
+                          <td>{{uploadedDevices.devicelocation}}</td>
+                          <td>{{uploadedDevices.devicebrand}}</td>
+                          <td>{{uploadedDevices.deviceos}}</td>
+                          <td>{{uploadedDevices.devicecostofpurchase}}</td>
+                          <td class='depreciationrate'>{{uploadedDevices.devicedepreciationrate}}</td>
+                          {% if uploadedDevices.devicename %}
+                          <td>{{uploadedDevices.devicename}}-{{uploadedDevices.deviceip}}</td>
+                          {% else %}
+                          <td>{{request.user}}-{{uploadedDevices.deviceip}}</td>
+                            {% endif %}
+                          <td>{{uploadedDevices.created_at}}</td>
+                          <td>
+                            <button>Delete Device Data</button>
+                          </td> {% endcomment %}
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class='staffinventory'>
+                    <div class='devicesinvintro'>
+                        <div>
+                            <h1>Staff Data</h1>
+                            <p>You have registered <strong>5</strong> Staff Members so far</p>
+                        </div>
+                        <a href={% url 'AllRegisterStaff' %}><div>
+                            <button class='seealldevices'>See All Registered Staff Members</button>
+                        </div></a>
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>Email Address</th>
+                              <th>Phone Number</th>
+                              <th>Assigned Device's ID</th>
+                              <th>Work Office</th>
+                              <th>Device Status</th>
+                              <th>Job Start Date</th>
+                              {% comment %} <th>Status</th> {% endcomment %}
+                              <th>Terminate</th>
+                            </tr>
+                            <tr>
+                              <td><a href=''>John</a></td>
+                              <td>Doe</td>
+                              <td>john@gmail.com</td>
+                              <td>090123456789</td>
+                              <td>Toshiba-5G078509H</td>
+                              <td>Aba Office</td>
+                              <td>Good</td>
+                              <td>2020</td>
+                              {% comment %} <td>
+                                <button>Edit Details</button>
+                              </td> {% endcomment %}
+                              <td>
+                                <button>Delete Staff Data</button>
+                              </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                {% comment %} REGISTER A DEVICE MODAL STARTS HERE {% endcomment %}
+                <div class='registerdeviceformmodal'>
+                    <img  class='closemodalsign' src={% static 'dashboard/img/closenav2.png' %} /><br/>
+                    <div class='staffformintro'>
+                        <img src={% static 'dashboard/img/staff2.png' %} /><br/>
+                        <h1>Register A Staff</h1>
+                    </div>
+                    <div>
+                        <form>
+                            <div>
+                                 <div>
+                                    <input type='text' placeholder='Enter First Name'/><br/><br/>
+                                </div>
+                                <div>
+                                    <input type='text' placeholder='Enter Last Name'/><br/><br/>
+                                </div>
+                            </div>
+                            <div>
+                                 <div>
+                                    <input type='text' placeholder='Enter Official Email Address'/><br/><br/>
+                                </div>
+                                <div>
+                                    <input type='text' placeholder='Enter Phone Number'/><br/><br/>
+                                </div>
+                            </div>
+                            <div>
+                                 <div>
+                                    <input type='text' placeholder='Enter Device Status'/><br/><br/>
+                                </div>
+                                <div>
+                                    <input type='text' placeholder='Enter Job Resumption Date'/><br/><br/>
+                                </div>
+                            </div>
+                            <div>
+                                 <div>
+                                    <input type='text' placeholder='Enter Assigned Device Number'/><br/><br/>
+                                </div>
+                                <div>
+                                    <input type='text' placeholder='Enter Office Station'/><br/><br/>
+                                </div>
+                            </div>
+                            <div class='formbtns'>
+                                <button>Register Staff</button>
+                            </div><br>
+                        </form>
+                        <div class='closemodal'>
+                            <button>Close</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                {% comment %} REGISTER A STAFF MODAL ENDS HERE {% endcomment %}
+
+                {% comment %} SCAN YOUR NETWORK MODAL STARTS HERE {% endcomment %}
+                <div class='scannetworkmmodal'>
+                    <img  class='closemodalsignforscannet' src={% static 'dashboard/img/closenav2.png' %} /><br/>
+                    <div class='staffformintro'>
+                        <img src={% static 'dashboard/img/cloud.png' %} /><br/>
+                        <h1>Scan Your Network Now</h1>
+                        <h3>Kindly Follow The Outlined Steps To  Find Connected Devices In Minutes</h3>
+                    </div>
+                    <div>
+                        <div class='networkscansteps'>
+                            <div class='steps'>
+                                <p>Step 1/6</p>
+                                <p>Download And Install Our Recommended Third-party lightweight software(WakeMeOnLan). </p>
+                                <a href = 'http://www.nirsoft.net/utils/wakemeonlan.zip'><button>Click Here To Download For A 32-bit System (> 500KB)</button><br/></a>
+                                <a href = 'http://www.nirsoft.net/utils/wakemeonlan-x64.zip'><button>Click Here To Download For A 64-bit System (> 500KB)</button><br/></a>
+                                <small>See what an installed WakeMeOnLan looks like below:</small><br/>
+                                <img src={% static 'dashboard/img/scannetworkpic1.png' %} />
+                            </div>
+                            <div class='steps'>
+                                <p>Step 2/6</p>
+                                <p>Click On The Green Play Button At The Top Of The Page As Indicated On The Image Below To Start Scan</p><br/>
+                                <img src={% static 'dashboard/img/scannetworkpic2.png' %} />
+                            </div>
+                            <div class='steps'>
+                                <p>Step 3/6</p>
+                                <p>After Scan Is Completed, You'll See A Page That Looks As Below, With A List Of Connected Devices, Now Click On <strong>EDIT</strong> On The Nav Bar To See A Dropdown, The Click On <strong>SELECT ALL</strong> To Select All Devices:</p><br/>
+                                <img src={% static 'dashboard/img/scannetworkpic3.png' %} />
+                            </div>
+                            <div class='steps'>
+                                <p>Step 4/6</p>
+                                <p>Now Copy All Selected Devices And Paste Into This Microsoft Excel Sheet <a href = {% url 'downloadSampleCSV' %}><strong>(Click Here To Download Excel Sheet)</strong></a> <br/>NOTE: Start pasting from the second line and make sure you do not change the details on the first line.</p>
+                                <img src={% static 'dashboard/img/scannetworkpic4.png' %} />
+                            </div>
+                            <div class='steps'>
+                                <p>Step 5/6</p>
+                                <p>After Pasting The Device Details, Delete Line Number Two(2) Which Is The Header From The Copied File</p>
+                                <img src={% static 'dashboard/img/csvusesample.PNG' %} />
+                            </div>
+                            <div class='steps'>
+                                <p>Step 6/6</p>
+                                <p>
+                                    After This, Complete The Rest OF The Section On The CSV File With As Much Information As You Possibly Can Provide, And When You're Done, Save The CSV File And Import Into Your Inventory System.
+                                </p>
+                                <img src={% static 'dashboard/img/csvusesample1.PNG' %} /><br/>
+                                <a href={% url 'UploadDevices' %}><button>Go To Import Register Devices Via CSV File Import</button></a>
+                            </div>
+                        </div>
+                        <div class='closemodalforscannet'>
+                            <button>Close</button>
+                        </div>
+                    </div>
+                </div>
+                {% comment %}SCAN YOUR NETWORK MODAL ENDS HERE {% endcomment %}
+                <footer>
+                    <div>
+                        <h3>Ⓒ IT Service Desk Africa</h3>
+                    </div>
+                    <div>
+                        <h3>Inventory Management Platform</h3>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src={% static 'dashboard/js/main.js' %}></script>
+    </body>
+</html>
+{% endblock content %}

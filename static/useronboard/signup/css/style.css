@@ -35,7 +35,7 @@ button {
     font-family: Helvetica,"sans-serif";
     transition: all .2s;
     padding: 10px 20px;
-    border-radius: 100px;
+    border-radius: 50px;
     background-color: #2464b4;
     color: rgb(232, 231, 231);
     border: 1px solid transparent;
@@ -66,6 +66,12 @@ button {
   
   button:active {
     transform: scale(0.95);
+  }
+
+  
+  .formbtn{
+    border-radius: 50px; 
+
   }
   
   

@@ -24,7 +24,7 @@ def Login_User(request):
         if user is not None:
             login(request, user)
             messages.success(request, 'Login Successfull')
-            return redirect('ContinueUserSignup')
+            return redirect('Dashboard')
 
         else:
             messages.error(request, 'Login Failed: Please Try Again')

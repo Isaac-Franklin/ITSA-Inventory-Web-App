@@ -15,6 +15,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -123,8 +124,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 
 
-MEDIA_URL = '/profileimages/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/profileimages')
+MEDIA_URL = '/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 # Default primary key field type
